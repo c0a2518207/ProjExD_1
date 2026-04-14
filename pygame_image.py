@@ -22,16 +22,28 @@ def main():
 
         key_lst = pg.key.get_pressed()  # 練習10：すべてのキーの押下状態の取得
         # print(key_lst)
-        if key_lst[pg.K_UP]:  # 上矢印キーが押されていたら
-            kk_rct.move_ip(0, -1)
-        if key_lst[pg.K_DOWN]:  # 下矢印キーが押されていたら
-            kk_rct.move_ip(0, +1)
-        if key_lst[pg.K_LEFT]:  # 左矢印キーが押されていたら
-            kk_rct.move_ip(-1, 0)
-        if key_lst[pg.K_RIGHT]:  # 右矢印キーが押されていたら
-            kk_rct.move_ip(+2, 0) 
+        
+        x=-1
+        y=0
 
-        kk_rct.move_ip(-1,0)    # 演習１動かないと背景と同じ速度で動く
+        if key_lst[pg.K_UP]:  # 上矢印キーが押されていたら
+            x = 0
+            y = -1
+            #kk_rct.move_ip(x, y)
+        if key_lst[pg.K_DOWN]:  # 下矢印キーが押されていたら
+            x = 0
+            y = 1
+            #kk_rct.move_ip(x, y)
+        if key_lst[pg.K_LEFT]:  # 左矢印キーが押されていたら
+            x = -1
+            y = 0
+            #kk_rct.move_ip(x, y)
+        if key_lst[pg.K_RIGHT]:  # 右矢印キーが押されていたら
+            x = 2
+            y = 0
+            #kk_rct.move_ip(x, y) 
+
+        kk_rct.move_ip(x,y)    # 演習１動かないと背景と同じ速度で動く
         
         x =tmr%3200 # 練習5
         screen.blit(bg_img, [-x, 0]) # 練習2
