@@ -29,7 +29,9 @@ def main():
         if key_lst[pg.K_LEFT]:  # 左矢印キーが押されていたら
             kk_rct.move_ip(-1, 0)
         if key_lst[pg.K_RIGHT]:  # 右矢印キーが押されていたら
-            kk_rct.move_ip(+1, 0)
+            kk_rct.move_ip(+2, 0) 
+
+        kk_rct.move_ip(-1,0)    # 演習１動かないと背景と同じ速度で動く
         
         x =tmr%3200 # 練習5
         screen.blit(bg_img, [-x, 0]) # 練習2
